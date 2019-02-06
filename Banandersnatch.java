@@ -3,6 +3,15 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 public class Banandersnatch extends JFrame implements ActionListener {
     private static JPanel mainPanel = new JPanel();
@@ -69,7 +78,13 @@ public class Banandersnatch extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (!responseField.getText().equals("")) {
             if (playerName == null) {
-                playerName = responseField.getText();
+                if (responseField.getText().equalsIgnoreCase("APE")) {
+                    playerName = "Marc";
+                } else if (responseField.getText().equalsIgnoreCase("give mike an internship")) {
+                    kingEnding();
+                } else {
+                    playerName = responseField.getText();
+                }
                 setTitle("Banandersnatch - " + playerName);
                 responseField.setText("");
                 spot++;
@@ -232,40 +247,94 @@ public class Banandersnatch extends JFrame implements ActionListener {
     }
 
     public void firstEvent() {
-        visualLabel.setIcon(new ImageIcon("images/jungle.jpg"));
-        promptLabel.setText("You're alone on an expedition in the Amazon Jungle and you hear a rustle behind you");
-        questionLabel.setText("What do you do? (run, turn around, climb tree)");
+        try {
+            URL url = new URL("http://blogs.discovermagazine.com/d-brief/files/2017/08/shutterstock_244338682.jpg");
+            BufferedImage img = ImageIO.read(url);
+            ImageIcon icon = new ImageIcon(img);
+            visualLabel.setIcon(icon);
+            promptLabel.setText("You're alone on an expedition in the Amazon Jungle and you hear a rustle behind you");
+            questionLabel.setText("What do you do? (run, turn around, climb tree)");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void secondEvent() {
-        visualLabel.setIcon(new ImageIcon("images/bigApe.jpg"));
-        promptLabel.setText("You turn around and see an enourmous APE staring down at you");
-        questionLabel.setText("What do you do? (run, fight)");
+        try {
+            URL url = new URL("https://c1.staticflickr.com/5/4075/4740022283_f1f2329b53_b.jpg");
+            BufferedImage img = ImageIO.read(url);
+            ImageIcon icon = new ImageIcon(img);
+            visualLabel.setIcon(icon);
+            promptLabel.setText("You turn around and see an enourmous APE staring down at you");
+            questionLabel.setText("What do you do? (run, fight)");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void secondEventAlt() {
-        visualLabel.setIcon(new ImageIcon("images/apeBelow.jpg"));
-        promptLabel.setText("You climb the tree, you see a massive ape below. There are also bananas in your tree");
-        questionLabel.setText("What do you do? (take banana, stay quiet)");
+        try {
+            URL url = new URL("https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/you-big-ape-robert-frank-gabriel.jpg");
+            BufferedImage img = ImageIO.read(url);
+            ImageIcon icon = new ImageIcon(img);
+            visualLabel.setIcon(icon);
+            promptLabel.setText("You climb the tree, you see a massive ape below. There are also bananas in your tree");
+            questionLabel.setText("What do you do? (take banana, stay quiet)");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void thirdEvent() {
-        visualLabel.setIcon(new ImageIcon("images/happy.jpg"));
-        promptLabel.setText("The APE respects your fighting spirit and motions for you to follow");
-        questionLabel.setText("What do you do? (follow, don't follow)");
+        try {
+            URL url = new URL("https://www.sciencedaily.com/images/2007/08/070802091437_1_900x600.jpg");
+            BufferedImage img = ImageIO.read(url);
+            ImageIcon icon = new ImageIcon(img);
+            visualLabel.setIcon(icon);
+            promptLabel.setText("The APE respects your fighting spirit and motions for you to follow");
+            questionLabel.setText("What do you do? (follow, don't follow)");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void getBanana() {
-        visualLabel.setIcon(new ImageIcon("images/banana.jpg"));
-        promptLabel.setText("You now have a banana");
-        questionLabel.setText("Type 'continue' to continue");
-        hasBanana = true;
+        try {
+            URL url = new URL("https://images-na.ssl-images-amazon.com/images/I/71gI-IUNUkL._SY355_.jpg");
+            BufferedImage img = ImageIO.read(url);
+            ImageIcon icon = new ImageIcon(img);
+            visualLabel.setIcon(icon);
+            promptLabel.setText("You now have a banana");
+            questionLabel.setText("Type 'continue' to continue");
+            hasBanana = true;
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void thirdEventAlt() {
-        visualLabel.setIcon(new ImageIcon("images/bigApe.jpg"));
-        promptLabel.setText("You climb down once you think it's safe, but turn to see an enourmous APE staring");
-        questionLabel.setText(" down at you. What do you do? (run, fight)");
+        try {
+            URL url = new URL("https://c1.staticflickr.com/5/4075/4740022283_f1f2329b53_b.jpg");
+            BufferedImage img = ImageIO.read(url);
+            ImageIcon icon = new ImageIcon(img);
+            visualLabel.setIcon(icon);
+            promptLabel.setText("You climb down once you think it's safe, but turn to see an enourmous APE staring");
+            questionLabel.setText(" down at you. What do you do? (run, fight)");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void thirdEventSneak() {
@@ -277,65 +346,159 @@ public class Banandersnatch extends JFrame implements ActionListener {
     // SECOND HALF OF BANANDERSNATCH
 
     public void secondHalfIntro() {
-        visualLabel.setIcon(new ImageIcon("images/apelantis.jpg"));
-        promptLabel.setText("You follow the APE. He brings you to the lost city of APElantis. You take a look");
-        questionLabel.setText("around. Which way do you look? (left, right)");
+        try {
+            URL url = new URL("https://www.ancient-origins.net/sites/default/files/field/image/lost-city-of-gold.JPG");
+            BufferedImage img = ImageIO.read(url);
+            ImageIcon icon = new ImageIcon(img);
+            visualLabel.setIcon(icon);
+            promptLabel.setText("You follow the APE. He brings you to the lost city of APElantis. You take a look");
+            questionLabel.setText("around. Which way do you look? (left, right)");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void lookLeft() {
-        visualLabel.setIcon(new ImageIcon("images/statue.jpg"));
-        promptLabel.setText("You look left and see a 50ft gold statue of an ape wearing a crown. Looks like some");
-        questionLabel.setText("sort of king. Type 'continue' to continue");
+        try {
+            URL url = new URL("http://rotocasted.com/static/mediafiles/tmpirUbaL.jpg.580x580_q85.jpg");
+            BufferedImage img = ImageIO.read(url);
+            ImageIcon icon = new ImageIcon(img);
+            visualLabel.setIcon(icon);
+            promptLabel.setText("You look left and see a 50ft gold statue of an ape wearing a crown. Looks like some");
+            questionLabel.setText("sort of king. Type 'continue' to continue");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void lookRight() {
-        visualLabel.setIcon(new ImageIcon("images/apeCity.jpg"));
-        promptLabel.setText("You look right and see thousands of APEs, marketplaces, and homes. It contains");
-        questionLabel.setText("technology you can't even fathom. Type 'continue' to continue");
+        try {
+            URL url = new URL("http://theculturalgutter.com/wp-content/uploads/2012/07/pota-magno.jpg");
+            BufferedImage img = ImageIO.read(url);
+            ImageIcon icon = new ImageIcon(img);
+            visualLabel.setIcon(icon);
+            promptLabel.setText("You look right and see thousands of APEs, marketplaces, and homes. It contains");
+            questionLabel.setText("technology you can't even fathom. Type 'continue' to continue");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void meetKing() {
-        visualLabel.setIcon(new ImageIcon("images/kingApe.jpg"));
-        promptLabel.setText("You are brought into a palace of sorts. In it you are met with the King APE");
-        questionLabel.setText("What do you do? (bow, try to communicate)");
+        try {
+            URL url = new URL("https://res.cloudinary.com/teepublic/image/private/s--S3Net-__--/t_Preview/b_rgb:191919,c_limit,f_jpg,h_630,q_90,w_630/v1534188776/production/designs/3016141_0.jpg");
+            BufferedImage img = ImageIO.read(url);
+            ImageIcon icon = new ImageIcon(img);
+            visualLabel.setIcon(icon);
+            promptLabel.setText("You are brought into a palace of sorts. In it you are met with the King APE");
+            questionLabel.setText("What do you do? (bow, try to communicate)");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void fightChampionApe() {
-        promptLabel.setText("You bow before the King APE, who declares that you must prove yourself by fighting");
-        questionLabel.setText("the APE Champion. Type 'continue' to continue");
+        try {
+            URL url = new URL("https://res.cloudinary.com/teepublic/image/private/s--S3Net-__--/t_Preview/b_rgb:191919,c_limit,f_jpg,h_630,q_90,w_630/v1534188776/production/designs/3016141_0.jpg");
+            BufferedImage img = ImageIO.read(url);
+            ImageIcon icon = new ImageIcon(img);
+            visualLabel.setIcon(icon);
+            promptLabel.setText("You bow before the King APE, who declares that you must prove yourself by fighting");
+            questionLabel.setText("the APE Champion. Type 'continue' to continue");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public void actualFight() {
-        visualLabel.setIcon(new ImageIcon("images/championApe.jpg"));
-        promptLabel.setText("The Champion APE comes out from the shadows, he is 15ft tall and RIPPED.");
-        questionLabel.setText("Choose your weapon (rock, paper, scissors)");
+        try {
+            URL url = new URL("https://vignette.wikia.nocookie.net/planetoftheapes/images/f/fd/1396985361008-09-ss036-0180-v157-le1077.jpg/revision/latest?cb=20140409125015");
+            BufferedImage img = ImageIO.read(url);
+            ImageIcon icon = new ImageIcon(img);
+            visualLabel.setIcon(icon);
+            promptLabel.setText("The Champion APE comes out from the shadows, he is 15ft tall and RIPPED.");
+            questionLabel.setText("Choose your weapon (rock, paper, scissors)");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void winFight() {
-        visualLabel.setIcon(new ImageIcon("images/paper.jpg"));
-        promptLabel.setText("Your paper beats the Champion APE's rock, you have won!");
-        questionLabel.setText("Type 'continue' to continue");
+        try {
+            URL url = new URL("https://res.cloudinary.com/teepublic/image/private/s--5cPQH0NH--/t_Resized%20Artwork/c_fit,g_north_west,h_954,w_954/co_ffffff,e_outline:48/co_ffffff,e_outline:inner_fill:48/co_ffffff,e_outline:48/co_ffffff,e_outline:inner_fill:48/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_jpg,h_630,q_90,w_630/v1503238736/production/designs/1837630_0.jpg");
+            BufferedImage img = ImageIO.read(url);
+            ImageIcon icon = new ImageIcon(img);
+            visualLabel.setIcon(icon);
+            promptLabel.setText("Your paper beats the Champion APE's rock, you have won!");
+            questionLabel.setText("Type 'continue' to continue");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void kingOffer() {
-        visualLabel.setIcon(new ImageIcon("images/kingApe.jpg"));
-        promptLabel.setText("The King APE is impressed and offers to make you the new Champion APE");
-        questionLabel.setText("What do you do? (accept, decline, challenge King APE)");
+        try {
+            URL url = new URL("https://res.cloudinary.com/teepublic/image/private/s--S3Net-__--/t_Preview/b_rgb:191919,c_limit,f_jpg,h_630,q_90,w_630/v1534188776/production/designs/3016141_0.jpg");
+            BufferedImage img = ImageIO.read(url);
+            ImageIcon icon = new ImageIcon(img);
+            visualLabel.setIcon(icon);
+            promptLabel.setText("The King APE is impressed and offers to make you the new Champion APE");
+            questionLabel.setText("What do you do? (accept, decline, challenge King APE)");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void challengeKing() {
-        visualLabel.setIcon(new ImageIcon("images/challengeKing.jpg"));
-        promptLabel.setText("The King APE accepts your challenge");
-        if (hasBanana) {
-            questionLabel.setText("Choose your weapon (rock, paper, scissors, banana)");
-        } else {
-            questionLabel.setText("Choose your weapon (rock, paper, scissors)");
+        try {
+            URL url = new URL("https://f4.bcbits.com/img/0006163982_10.jpg");
+            BufferedImage img = ImageIO.read(url);
+            ImageIcon icon = new ImageIcon(img);
+            visualLabel.setIcon(icon);
+            promptLabel.setText("The King APE accepts your challenge");
+            if (hasBanana) {
+                questionLabel.setText("Choose your weapon (rock, paper, scissors)");
+            } else {
+                questionLabel.setText("Choose your weapon (rock, paper, scissors)");
+            }
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
     public void beatKing() {
-        promptLabel.setText("You take out the banana as the King APE throws rock. All APEs are momentarily");
-        questionLabel.setText("distracted as you switch your hand to rock, you win! Type 'continue' to continue");
+        try {
+            URL url = new URL("https://f4.bcbits.com/img/0006163982_10.jpg");
+            BufferedImage img = ImageIO.read(url);
+            ImageIcon icon = new ImageIcon(img);
+            visualLabel.setIcon(icon);
+            promptLabel.setText("You take out the banana as the King APE throws rock. All APEs are momentarily");
+            questionLabel.setText("distracted as you switch your hand to rock, you win! Type 'continue' to continue");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
 
