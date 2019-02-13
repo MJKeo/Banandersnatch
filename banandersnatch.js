@@ -286,7 +286,7 @@ function beatKing() {
 function gameOver(message) {
     document.getElementById("image").src="https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/2T0t-6V/videoblocks-game-over-8-bit-funky-a-funky-colorful-4k-game-over-screen-animation-letters-falling-towards-the-center-8-bit-retro-style-red-and-yellow_hcqx9_kax_thumbnail-full06.png";
     document.getElementById("prompt").innerText = message;
-    document.getElementById("prompt2").innerText = "GAME OVER";
+    document.getElementById("prompt2").innerText = "Refresh the page to try again";
 }
 
 function escapeEnding() {
