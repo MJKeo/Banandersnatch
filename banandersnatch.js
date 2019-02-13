@@ -26,41 +26,41 @@ function update() {
         }
         console.log(response)
         if (spot == 1 && !firstTime) {
-            if (!response.localeCompare("run")) {
+            if (!response.toUpperCase().localeCompare("RUN")) {
                 gameOver("You try and outrun the creature, but you make too much noise and alert the creature who chases you down and captures you.");
-            } else if (!response.localeCompare("turn around")) {
+            } else if (!response.toUpperCase().localeCompare("TURN AROUND")) {
                 spot += 1;
                 secondEvent();
-            } else if (!response.localeCompare("climb tree")) {
+            } else if (!response.toUpperCase().localeCompare("CLIMB TREE")) {
                 spot += 100;
                 secondEventAlt();
             } else {
                 document.getElementById("response").value = "Please enter a valid input";
             }
         } else if (spot == 2) {
-            if (!response.localeCompare("run")) {
+            if (!response.localeCompare("RUN")) {
                 gameOver("You try and outrun the creature, but you the APE chases you down and captures you.");
-            } else if (!response.localeCompare("fight")) {
+            } else if (!response.toUpperCase().localeCompare("FIGHT")) {
                 spot += 1;
                 thirdEvent();
             } else {
                 document.getElementById("response").value = "Please enter a valid input";
             }
         } else if (spot == 101) {
-            if (!response.localeCompare("take banana")) {
+            if (!response.toUpperCase().localeCompare("TAKE BANANA")) {
                 spot = 123123;
                 getBanana();
-            } else if (!response.localeCompare("stay quiet")) {
+            } else if (!response.toUpperCase().localeCompare("STAY QUIET")) {
                 spot += 1;
                 thirdEventAlt();
             } else {
                 document.getElementById("response").value = "Please enter a valid input";
             }
         } else if (spot == 3) {
-            if (!response.localeCompare("follow")) {
+            if (!response.toUpperCase().localeCompare("FOLLOW")) {
                 spot = 50;
                 secondHalfIntro();
-            } else if (!response.localeCompare("don't follow")) {
+            } else if (!response.toUpperCase().localeCompare("DON'T FOLLOW")) {
                 spot++;
                 thirdEventSneak();
             } else {
@@ -75,98 +75,98 @@ function update() {
                 gameOver("The APE's keen hearing detects your escape and is offended, he hunts you down and captures you");
             }
         } else if (spot == 123123) {
-            if (!response.localeCompare("continue")) {
+            if (!response.toUpperCase().localeCompare("CONTINUE")) {
                 spot = 102;
                 thirdEventAlt();
             } else {
                 document.getElementById("response").value = "Please enter a valid input";
             }
         } else if (spot == 102) {
-            if (!response.localeCompare("run")) {
+            if (!response.toUpperCase().localeCompare("RUN")) {
                 gameOver("You try and outrun the creature, but you the APE chases you down and captures you.");
-            } else if (!response.localeCompare("fight")) {
+            } else if (!response.toUpperCase().localeCompare("FIGHT")) {
                 spot = 3;
                 thirdEvent();
             } else {
                 document.getElementById("response").value = "Please enter a valid input";
             }
         } else if (spot == 50) {
-            if (!response.localeCompare("left")) {
+            if (!response.toUpperCase().localeCompare("LEFT")) {
                 spot += 1;
                 lookLeft();
-            } else if (!response.localeCompare("right")) {
+            } else if (!response.toUpperCase().localeCompare("RIGHT")) {
                 spot += 2;
                 lookRight();
             } else {
                 document.getElementById("response").value = "Please enter a valid input";
             }
         } else if (spot == 51 || spot == 52) {
-            if (!response.localeCompare("continue")) {
+            if (!response.toUpperCase().localeCompare("CONTINUE")) {
                 spot = 53;
                 meetKing();
             } else {
                 document.getElementById("response").value = "Please enter a valid input";
             }
         } else if (spot == 53) {
-            if (!response.localeCompare("bow")) {
+            if (!response.toUpperCase().localeCompare("BOW")) {
                 spot = 54;
                 fightChampionApe();
-            } else if (!response.localeCompare("try to communicate")) {
+            } else if (!response.toUpperCase().localeCompare("TRY TO COMMUNICATE")) {
                 gameOver("You make APE noise in an attempt to communicate, but the king speaks perfect english and is greatly offended, you're sentenced to life in prison");
             } else {
                 document.getElementById("response").value = "Please enter a valid input";
             }
         } else if (spot == 54) {
-            if (!response.localeCompare("continue")) {
+            if (!response.toUpperCase().localeCompare("CONTINUE")) {
                 spot = 55;
                 actualFight();
             } else {
                 document.getElementById("response").value = "Please enter a valid input";
             }
         } else if (spot == 55) {
-            if (!response.localeCompare("rock")) {
+            if (!response.toUpperCase().localeCompare("ROCK")) {
                 gameOver("The ape chose paper, for failing the challenge you are sentenced to life in prison");
-            } else if (!response.localeCompare("paper")) {
+            } else if (!response.toUpperCase().localeCompare("PAPER")) {
                 spot = 56;
                 winFight();
-            } else if (!response.localeCompare("scissors")) {
+            } else if (!response.toUpperCase().localeCompare("SCISSORS")) {
                 gameOver("The ape chose rock, for failing the challenge you are sentenced to life in prison");
             } else {
                 document.getElementById("response").value = "Please enter a valid input";
             }
         } else if (spot == 56) {
-            if (!response.localeCompare("continue")) {
+            if (!response.toUpperCase().localeCompare("CONTINUE")) {
                 spot = 57;
                 kingOffer();
             } else {
                 document.getElementById("response").value = "Please enter a valid input";
             }
         } else if (spot == 57) {
-            if (!response.localeCompare("accept")) {
+            if (!response.toUpperCase().localeCompare("ACCEP")) {
                 championEnding();
-            } else if (!response.localeCompare("challenge king ape")) {
+            } else if (!response.toUpperCase().localeCompare("CHALLENGE KING APE")) {
                 spot = 58;
                 challengeKing();
-            } else if (!response.localeCompare("decline")) {
+            } else if (!response.toUpperCase().localeCompare("DECLINE")) {
                 gameOver("The King APE is offended by your refusal, you have been sentenced to life in prison");
             } else {
                 document.getElementById("response").value = "Please enter a valid input";
             }
         } else if (spot == 58) {
-            if (!response.localeCompare("rock")) {
+            if (!response.toUpperCase().localeCompare("ROCK")) {
                 gameOver("The King APE chose paper, you are sentenced to life in prison");
-            } else if (!response.localeCompare("paper")) {
+            } else if (!response.toUpperCase().localeCompare("PAPER")) {
                 gameOver("The King APE chose scissors, you are sentenced to life in prison");
-            } else if (!response.localeCompare("scissors")) {
+            } else if (!response.toUpperCase().localeCompare("SCISSORS")) {
                 gameOver("The King APE chose rock, you are sentenced to life in prison");
-            } else if (!response.localeCompare("banana") && hasBanana) {
+            } else if (!response.toUpperCase().localeCompare("BANANA") && hasBanana) {
                 spot = 1000;
                 beatKing();
             } else {
                 document.getElementById("response").value = "Please enter a valid input";
             }
         } else if (spot == 1000) {
-            if (!response.localeCompare("continue")) {
+            if (!response.toUpperCase().localeCompare("continue")) {
                 kingEnding();
             } else {
                 responseField.setText("Please enter a valid input");
