@@ -285,25 +285,28 @@ function beatKing() {
 }
 
 function gameOver(message) {
+    document.getElementById("submit").disabled = true;
     document.getElementById("image").src="https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/2T0t-6V/videoblocks-game-over-8-bit-funky-a-funky-colorful-4k-game-over-screen-animation-letters-falling-towards-the-center-8-bit-retro-style-red-and-yellow_hcqx9_kax_thumbnail-full06.png";
     document.getElementById("prompt").innerText = message;
     document.getElementById("prompt2").innerText = "Refresh the page to try again";
 }
 
 function escapeEnding() {
+    document.getElementById("submit").disabled = true;
     document.getElementById("image").src="https://blog.radissonblu.com/wp-content/uploads/2014/11/escape-room.jpg";
     document.getElementById("prompt").innerText = "ENDING #1";
     document.getElementById("prompt2").innerText = "You successfully escaped the APE, but you feel as if you've missed a great adventure";
 }
 
 function championEnding() {
+    document.getElementById("submit").disabled = true;
     document.getElementById("image").src="https://img.wondercostumes.com/imgzoom/babealonian-warrior-man-68630.jpg";
     document.getElementById("prompt").innerText = "ENDING #2";
     document.getElementById("prompt2").innerText = "Congrats you are now the Champion APE!!";
 }
 
 function kingEnding() {
-    console.log("correct");
+    document.getElementById("submit").disabled = true;
     document.getElementById("image").src="https://yt3.ggpht.com/a-/AAuE7mD5AkH2PbSMcp4Z8CJg0EM22PvjuPzvdrOA3Q=s900-mo-c-c0xffffffff-rj-k-no";
     document.getElementById("prompt").innerText = "ENDING #3";
     document.getElementById("prompt2").innerText = "You have become the King APE. You are now a God among APEs";
