@@ -204,6 +204,7 @@ function thirdEvent() {
 }
 
 function getBanana() {
+        hasBanana = true;
         document.getElementById("image").src="https://images-na.ssl-images-amazon.com/images/I/71gI-IUNUkL._SY355_.jpg";
         document.getElementById("prompt").innerText = "You now have a banana";
         document.getElementById("prompt2").innerText = "Type 'continue' to continue";
