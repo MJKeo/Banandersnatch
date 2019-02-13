@@ -280,7 +280,7 @@ function challengeKing() {
 
 function beatKing() {
         document.getElementById("image").src="https://f4.bcbits.com/img/0006163982_10.jpg";
-        document.getElementById("prompt").innerText = "You take out the banana as the King APE throws rock. All APEs are momentarily";
+        document.getElementById("prompt").innerText = "You take out the banana as the King APE throws scissors. All APEs are momentarily";
         document.getElementById("prompt2").innerText = "distracted as you switch your hand to rock, you win! Type 'continue' to continue";
 }
 
