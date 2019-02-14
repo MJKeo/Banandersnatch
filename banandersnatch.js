@@ -16,7 +16,7 @@ function update() {
             } else {
                 playerName = document.getElementById("response").value;
             }
-            document.getElementById("mainTitleLabel").innerText = ("BANANDERSNATCH - " + playerName);
+            document.getElementById("mainTitleLabel").innerText = ("Banandersnatch - " + playerName);
             document.getElementById("response").value = "";
             spot++;
             firstEvent();
