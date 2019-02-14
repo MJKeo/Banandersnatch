@@ -142,7 +142,7 @@ function update() {
                 document.getElementById("response").value = "Please enter a valid input";
             }
         } else if (spot == 57) {
-            if (!response.toUpperCase().localeCompare("ACCEP")) {
+            if (!response.toUpperCase().localeCompare("ACCEPT")) {
                 championEnding();
             } else if (!response.toUpperCase().localeCompare("CHALLENGE KING APE")) {
                 spot = 58;
@@ -166,7 +166,7 @@ function update() {
                 document.getElementById("response").value = "Please enter a valid input";
             }
         } else if (spot == 1000) {
-            if (!response.toUpperCase().localeCompare("continue")) {
+            if (!response.toUpperCase().localeCompare("CONTINUE")) {
                 kingEnding();
             } else {
                 responseField.setText("Please enter a valid input");
